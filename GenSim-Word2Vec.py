@@ -108,3 +108,14 @@ if __name__ == '__main__':
     # similarity between two unrelated words
     print("Similarity between 'dirty' and 'clean'",
           model.wv.similarity(w1="dirty", w2="clean"))
+
+    ######### TEST ##########
+    def get_mean_vector(word2vec_model, words):
+    # remove out-of-vocabulary words
+    words = [word for word in words if word in word2vec_model.vocab]
+    if len(words) >= 1:
+        return np.mean(word2vec_model[words], axis=0)
+    else:
+        return []
+    
+     vec = get_mean_vector(model, doc.words)
