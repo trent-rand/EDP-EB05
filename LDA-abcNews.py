@@ -3,6 +3,7 @@ import re
 import numpy as np
 import pandas as pd
 from pprint import pprint
+import networkx as nx
 
 # Gensim
 import gensim
@@ -293,3 +294,9 @@ df_dominant_topics.columns = ['Dominant_Topic', 'Topic_Keywords', 'Num_Documents
 
 # Show
 df_dominant_topics
+
+############## TEST ###########
+G = nx.Graph()  # build graph
+G.add_nodes_from(sent_topics_sorteddf_mallet)  # add nodes 
+G.add_edges_from()    #add edges
+
