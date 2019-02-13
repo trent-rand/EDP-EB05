@@ -9,6 +9,8 @@ import networkx as nx
 
 import gzip
 
+import MySQLconnector
+
 # Gensim
 import gensim
 import gensim.corpora as corpora
@@ -30,17 +32,32 @@ logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=lo
 import warnings
 warnings.filterwarnings("ignore",category=DeprecationWarning)
 
-
 os.environ['MALLET_HOME'] = 'C:\\users\\biney\\mallet_unzipped\\mallet-2.0.8'
 
 
-## 5. Prepare Stopwords
+def file(x):
+    return {
+        0:'',
+        1:'',
+        2:'',
+        3:'',
+        4:'',
+        5:'',
+        6:'',
+        7:'',
+        8:'',
+        9:'',
+    }.get(x, '')
+
+
+
+## 5. Fetch Stopwords
 from nltk.corpus import stopwords
 stop_words = stopwords.words('english')
 stop_words.extend(['from', 'subject', 're', 'edu', 'use'])
 
-
-def read_input(input_file):
+# Custom method to parse .gzip corpuses.
+def read_gzip(input_file):
     """This method reads the input file which is in gzip format"""
 
     logging.info("reading file {0}...this may take a while".format(input_file))
@@ -53,57 +70,59 @@ def read_input(input_file):
             # text
             yield gensim.utils.simple_preprocess(line)
 
-## 6. Import Newsgroups Data
-# Import Dataset
-df = pd.read_csv('C:/Users/Trent Rand/Documents/EDP-EB05/EDP-EB05-master/TrumpTwats.csv', dtype=str)
-#abspath = os.path.dirname(os.path.abspath(__file__))
-#df = os.path.join(abspath, "reviews_data_minimus_reduced.txt.gz")
 
-#print(df.target_names.unique())
-#df.head()
+    ## 6. Import Data
+    # Import Dataset from external files.
 
-#data = list(read_input(df))
+#conn = MySQLdb.connect(host="CloudIpAddress", user="username", passwd="password", db="Twitter")
 
-## 7. Remove emails and newline characters
-# Convert to list
+conn = MySQLconnector.connect(host="Xxx.Xxx.Xxx.Xxx", user=root, passwd="password", db="Twitter")
+
+#cursor = conn.cursor()
+
+#cursor.execute('SELECT COUNT(MemberID) as count FROM Members WHERE id = 1')
+#table_rows = cursor.fetchall()
+
+df = pd.read_sql('SELECT * FROM Tweets WHERE UserId < 10000', con=conn)
+
+#UserData = pd.read_sql('SELECT * FROM UserConcepts WHERE UserId < 10000', con=conn)
+#TopicData = pd.read_sql('SELECT * FROM Tweets WHERE UserId < 10000', con=conn)
+#UserFollowships = pd.read_sql('SELECT * FROM Tweets WHERE UserId < 10000', con=conn)
+
+
+conn.close()
+
+#df = pd.DataFrame(table_rows)
+
+#df = pd.read_csv('abcnews-reduced.csv', dtype=str)
+    #abspath = os.path.dirname(os.path.abspath(__file__))
+    #df = os.path.join(abspath, file_name)
+
+    ## 7. Convert to List
 data = df.values.tolist()
-
-# Remove Emails
-#data = [re.sub('\S*@\S*\s?', '', sent) for sent in data]
-
-# Remove new line characters
-#data = [re.sub('\s+', ' ', sent) for sent in data]
-
-# Remove distracting single quotes
-#data = [re.sub("\'", "", sent) for sent in data]
 pprint(data[:1])
 
 
-## 8. Tokenize words and Clean-up text
+    ## 8.Tokenize document in GenSim modifiable tokens.
 def sent_to_words(sentences):
     for sentence in sentences:
         yield(gensim.utils.simple_preprocess(str(sentence), deacc=True))  # deacc=True removes punctuations
 
 data_words = list(sent_to_words(data))
-
 print(data_words[:1])
 
 
-## 9. Creating Bigram and Trigram Models
-# Build the bigram and trigram models
+    ## 9. Creating Bigram and Trigram Models
+    # Build the bigram and trigram models
 bigram = gensim.models.Phrases(data_words, min_count=5, threshold=100) # higher threshold fewer phrases.
 trigram = gensim.models.Phrases(bigram[data_words], threshold=100)
 
-# Faster way to get a sentence clubbed as a trigram/bigram
+    # Faster way to get a sentence clubbed as a trigram/bigram
 bigram_mod = gensim.models.phrases.Phraser(bigram)
 trigram_mod = gensim.models.phrases.Phraser(trigram)
 
-# See trigram example
-print(trigram_mod[bigram_mod[data_words[0]]])
-
-
-## 10. Remove Stopwords, Make Bigrams and Lemmatize
-# Define functions for stopwords, bigrams, trigrams and lemmatization
+    ## 10. Remove Stopwords, Make Bigrams and Lemmatize
+    # Define functions for stopwords, bigrams, trigrams and lemmatization
 def remove_stopwords(texts):
     return [[word for word in simple_preprocess(str(doc)) if word not in stop_words] for doc in texts]
 
@@ -121,64 +140,64 @@ def lemmatization(texts, allowed_postags=['NOUN', 'ADJ', 'VERB', 'ADV']):
         texts_out.append([token.lemma_ for token in doc if token.pos_ in allowed_postags])
     return texts_out
 
-# Remove Stop Words
+    # Remove Stop Words
 data_words_nostops = remove_stopwords(data_words)
 
-# Form Bigrams
+    # Form Bigrams
 data_words_bigrams = make_bigrams(data_words_nostops)
 
-# Initialize spacy 'en' model, keeping only tagger component (for efficiency)
-# python3 -m spacy download en
+    # Initialize spacy 'en' model, keeping only tagger component (for efficiency)
+    # python3 -m spacy download en
 nlp = spacy.load('en', disable=['parser', 'ner'])
 
-# Do lemmatization keeping only noun, adj, vb, adv
+    # Do lemmatization keeping only noun, adj, vb, adv
 data_lemmatized = lemmatization(data_words_bigrams, allowed_postags=['NOUN', 'ADJ', 'VERB', 'ADV'])
 
 print(data_lemmatized[:1])
 
-## 11. Create the Dictionary and Corpus needed for Topic Modeling
-# Create Dictionary
+    ## 11. Create the Dictionary and Corpus needed for Topic Modeling
+    # Create Dictionary
 id2word = corpora.Dictionary(data_lemmatized)
 
-# Create Corpus
+    # Create Corpus
 texts = data_lemmatized
 
-# Term Document Frequency
+    # Create corpus bag of words
 corpus = [id2word.doc2bow(text) for text in texts]
 
-# View
+    # View
 print(corpus[:1])
 
-# Human readable format of corpus (term-frequency)
+    # Human readable format of corpus (term-frequency)
 [[(id2word[id], freq) for id, freq in cp] for cp in corpus[:1]]
 
-## 12. Building Topic Model (LDA)
-# Build LDA model
+    ## 12. Building Topic Model (LDA)
+    # Build LDA model
 lda_model = gensim.models.ldamodel.LdaModel(corpus=corpus,
-                                           id2word=id2word,
-                                           num_topics=50,
-                                           random_state=100,
-                                           update_every=1,
-                                           chunksize=100,
-                                           passes=10,
-                                           alpha='auto',
-                                           per_word_topics=True)
+                                               id2word=id2word,
+                                               num_topics=50,
+                                               random_state=100,
+                                               update_every=1,
+                                               chunksize=100,
+                                               passes=10,
+                                               alpha='auto',
+                                               per_word_topics=True)
 
-## 13. View topics in LDA model
+    ## 13. View topics in LDA model
 
-# Print the Keyword in the 10 topics
+    # Print the Keyword in the 10 topics
 pprint(lda_model.print_topics())
 doc_lda = lda_model[corpus]
 
-## 14. Perplexity + Coherence Score
+    ## 14. Perplexity + Coherence Score
 
-# Compute Perplexity
+    # Compute Perplexity
 print('\nPerplexity: ', lda_model.log_perplexity(corpus))  # a measure of how good the model is. lower the better.
 
-# Compute Coherence Score
-#coherence_model_lda = CoherenceModel(model=lda_model, texts=data_lemmatized, dictionary=id2word, coherence='c_v')
-#coherence_lda = coherence_model_lda.get_coherence()
-#print('\nCoherence Score: ', coherence_lda)
+    # Compute Coherence Score
+coherence_model_lda = gensim.models.coherencemodel.CoherenceModel(model=lda_model, texts=data_lemmatized, dictionary=id2word, coherence='c_v', )
+coherence_lda = coherence_model_lda.get_coherence()
+print('\nCoherence Score: ', coherence_lda)
 
 pprint(doc_lda)
 
@@ -192,9 +211,8 @@ nameList = lda_model.get_topic_terms(2)
 pprint(nameList)
 
 
-
 #pyLDAvis.enable_notebook()
 vis = pyLDAvis.gensim.prepare(lda_model, corpus, id2word)
-pyLDAvis.save_html(vis, 'LDATopicModelling(TrumpTweets).html')
+pyLDAvis.save_html(vis, 'TestRunExport.html')
 
 ##################################### MALLET ####################################
