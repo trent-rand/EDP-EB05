@@ -8,6 +8,7 @@ import networkx as nx
 # Gensim
 import gensim
 import gensim.corpora as corpora
+from gensim.corpora import MmCorpus
 from gensim.utils import simple_preprocess
 from gensim.models import CoherenceModel
 
@@ -46,7 +47,7 @@ connection = pymysql.connect(host='127.0.0.1', user='root', password='5TRcaSeTr4
 #
 #df = pd.read_csv('abcnews-reduced.csv', dtype=str, usecols=[1])
 
-Tweets_df = pd.read_sql('SELECT * FROM Tweets LIMIT 10000', con=connection)
+Tweets_df = pd.read_sql('SELECT * FROM Tweets', con=connection)
 
 #print(Tweets_df.iloc[:,0]) #Random IDs
 #print(Tweets_df.iloc[:,1]) #Tweet Text Content
@@ -199,11 +200,7 @@ for doc in data_lemmatized:
 
     ind = ind + 1;
 
-
 #
-#
-#
-
 
 G = nx.Graph()
 G.add_nodes_from(data)
@@ -213,7 +210,12 @@ G.add_edges_from(user_topic_edges)
 nx.draw(G)
 plt.show()
 
+lda_model.save('lda.model') #save lda model
+# TO LOAD
+lda_model = lda_model.load('lda.model')
 
-#plt.subplot(121)
-#plt.show()
-#plt.savefig("TestGraph.png")
+corpora.MmCorpus.serialize('GeneratedCorpus.mm', corpus) #save corpus
+#TO LOAD
+# corpus = corpora.MmCorpus('GeneratedCorpus.mm')
+
+
