@@ -212,10 +212,10 @@ plt.show()
 
 lda_model.save('lda.model') #save lda model
 # TO LOAD
-lda_model = lda_model.load('lda.model')
+# lda_model = lda_model.load('lda.model')
 
 corpora.MmCorpus.serialize('GeneratedCorpus.mm', corpus) #save corpus
-#TO LOAD
+# TO LOAD
 # corpus = corpora.MmCorpus('GeneratedCorpus.mm')
 
 
