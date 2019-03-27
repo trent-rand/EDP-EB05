@@ -9,7 +9,7 @@ import networkx as nx
 
 import gzip
 
-import MySQLconnector
+import MySQLdb
 
 # Gensim
 import gensim
@@ -76,7 +76,7 @@ def read_gzip(input_file):
 
 #conn = MySQLdb.connect(host="CloudIpAddress", user="username", passwd="password", db="Twitter")
 
-conn = MySQLconnector.connect(host="Xxx.Xxx.Xxx.Xxx", user=root, passwd="password", db="Twitter")
+conn = MySQLdb.connect(host="35.203.15.52", user=root, passwd="5TRcaSeTr4L", db="Twitter")
 
 #cursor = conn.cursor()
 
@@ -84,11 +84,6 @@ conn = MySQLconnector.connect(host="Xxx.Xxx.Xxx.Xxx", user=root, passwd="passwor
 #table_rows = cursor.fetchall()
 
 df = pd.read_sql('SELECT * FROM Tweets WHERE UserId < 10000', con=conn)
-
-#UserData = pd.read_sql('SELECT * FROM UserConcepts WHERE UserId < 10000', con=conn)
-#TopicData = pd.read_sql('SELECT * FROM Tweets WHERE UserId < 10000', con=conn)
-#UserFollowships = pd.read_sql('SELECT * FROM Tweets WHERE UserId < 10000', con=conn)
-
 
 conn.close()
 

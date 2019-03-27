@@ -7,12 +7,15 @@ import networkx as nx
 
 import json
 
+####La7S<AB?5_H=ObFmIo{
+
 
 # Gensim
 import gensim
 import gensim.corpora as corpora
 from gensim.utils import simple_preprocess
 from gensim.models import CoherenceModel
+from gensim.test.utils import datapath
 
 # Let's go get our friend WikiRelate:
 #from folder.wikirelate as wikirelate
@@ -23,7 +26,6 @@ import spacy
 # Plotting tools
 import pyLDAvis
 import pyLDAvis.gensim  # don't skip this
-import matplotlib.pyplot as plt
 
 
 # MySQL Import
@@ -52,7 +54,7 @@ connection = pymysql.connect(host='127.0.0.1', user='root', password='5TRcaSeTr4
 #
 #df = pd.read_csv('abcnews-reduced.csv', dtype=str, usecols=[1])
 
-Tweets_df = pd.read_sql('SELECT * FROM Tweets LIMIT 10000', con=connection)
+Tweets_df = pd.read_sql('SELECT * FROM Tweets LIMIT 1000', con=connection)
 
 #print(Tweets_df.iloc[:,0]) #Random IDs
 #print(Tweets_df.iloc[:,1]) #Tweet Text Content
@@ -127,7 +129,7 @@ data_words_bigrams = make_bigrams(data_words_nostops)
 nlp = spacy.load('en', disable=['parser', 'ner'])
 
     # Do lemmatization keeping only noun, adj, vb, adv
-data_lemmatized = lemmatization(data_words_bigrams, allowed_postags=['NOUN', 'ADJ', 'VERB', 'ADV'])
+data_lemmatized = lemmatization(data_words_bigrams, allowed_postags=[u'NOUN', u'ADJ', u'VERB', u'ADV'])
 
 print(data_lemmatized[:1])
 
@@ -149,15 +151,18 @@ corpus = [id2word.doc2bow(text) for text in texts]
 
     ## 12. Building Topic Model (LDA)
     # Build LDA model
-lda_model = gensim.models.ldamodel.LdaModel(corpus=corpus,
-                                               id2word=id2word,
-                                               num_topics=50,
-                                               random_state=100,
-                                               update_every=1,
-                                               chunksize=100,
-                                               passes=10,
-                                               alpha='auto',
-                                               per_word_topics=True)
+load_file = datapath("C:\\Users\\Trent Rand\\Documents\\edp-eb05\\edp-eb05-master\\Models\\TweetsLdaModel")
+lda_model = gensim.models.ldamodel.LdaModel.load(load_file)
+
+#= gensim.models.ldamodel.LdaModel(corpus=corpus,
+#                                               id2word=id2word,
+#                                               num_topics=50,
+#                                               random_state=100,
+#                                               update_every=1,
+#                                               chunksize=100,
+#                                               passes=10,
+#                                               alpha='auto',
+#                                               per_word_topics=True)
 
     ## 13. View topics in LDA model
 
@@ -225,7 +230,7 @@ G.add_nodes_from(UserIdList)
 G.add_edges_from(user_topic_edges)
 
 nx.draw(G)
-plt.show()
+
 
 nx.write_edgelist(G, "test1.edgelist", data=True)
 graphJSONData = nx.readwrite.node_link_data(G)
@@ -244,20 +249,20 @@ pyLDAvis.save_html(vis, 'TestRunExport.html')
 
 # wikirelate was here
 
-topicModel = Word2Vec.load_word2vec_format('conceptEmbeddings.bin.gz', binary=True)
+topicModel = Word2Vec.load_word2vec_format('C:\\Users\\Trent Rand\\Documents\\edp-eb05\\edp-eb05-master\\conceptEmbeddings.bin.gz', binary=True)
 
-tsg = nx.Graph()
-topic_topic_edges = []
+#tsg = nx.Graph()
+#topic_topic_edges = []
 
 
 t = 0;
 for topic in np.nditer(ndarray):
 
     tsg.add_node(t)
-    #This isn't what a Try/Catch is for, dummy. This is embarassing. You're better than this.
+        #This isn't what a Try/Catch is for, dummy. This is embarassing. You're better than this.
     try:
         topicTermsA = lda_model.show_topic(t)
-        topicTermsB = lad_model.show_topic(t + 1)
+        topicTermsB = lda_model.show_topic(t + 1)
 
         distance = topicModel.wmdistance(topicTermsA, topicsTermsB)
         pprint(distance)
@@ -272,7 +277,3 @@ for topic in np.nditer(ndarray):
 tsg.add_weighted_edges_from(topic_topic_edges)
 topicGraphJSONData = nx.readwrite.node_link_data(G)
 json.dump(topicGraphJSONData, 'topicGraph.json')
-
-plt.subplot(121)
-plt.show()
-#plt.savefig("TestGraph.png")

@@ -19,6 +19,10 @@ import pyLDAvis
 import pyLDAvis.gensim  # don't skip this
 import matplotlib.pyplot as plt
 
+
+# MySQL Import
+import
+
 # Enable logging for gensim - optional
 import logging
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.ERROR)
@@ -49,13 +53,13 @@ data = df.values.tolist()
 #print(data)
 
 # Remove Emails
-data = [re.sub('\S*@\S*\s?', '', sent) for sent in data]
+#data = [re.sub('\S*@\S*\s?', '', sent) for sent in data]
 
 # Remove new line characters
-data = [re.sub('\s+', ' ', sent) for sent in data]
+#data = [re.sub('\s+', ' ', sent) for sent in data]
 
 # Remove distracting single quotes
-data = [re.sub("\'", "", sent) for sent in data]
+#data = [re.sub("\'", "", sent) for sent in data]
 pprint(data[:1])
 
 
@@ -156,14 +160,14 @@ doc_lda = lda_model[corpus]
 print('\nPerplexity: ', lda_model.log_perplexity(corpus))  # a measure of how good the model is. lower the better.
 
 # Compute Coherence Score
-coherence_model_lda = CoherenceModel(model=lda_model, texts=data_lemmatized, dictionary=id2word, coherence='c_v')
-coherence_lda = coherence_model_lda.get_coherence()
-print('\nCoherence Score: ', coherence_lda)
+#coherence_model_lda = CoherenceModel(model=lda_model, texts=data_lemmatized, dictionary=id2word, coherence='c_v')
+#coherence_lda = coherence_model_lda.get_coherence()
+#print('\nCoherence Score: ', coherence_lda)
 
 ##################################### MALLET ####################################
 
 # Path
-mallet_path = ' C:/Program Files/mallet-2.0.8/bin/mallet' # update this path
+mallet_path = 'C:/PerfLogs/mallet-2.0.6/bin' # update this path
 ldamallet = gensim.models.wrappers.LdaMallet(mallet_path, corpus=corpus, num_topics=20, id2word=id2word)
 
 # Show Topics
@@ -297,6 +301,5 @@ df_dominant_topics
 
 ############## TEST ###########
 G = nx.Graph()  # build graph
-G.add_nodes_from(sent_topics_sorteddf_mallet)  # add nodes 
+G.add_nodes_from(sent_topics_sorteddf_mallet)  # add nodes
 G.add_edges_from()    #add edges
-

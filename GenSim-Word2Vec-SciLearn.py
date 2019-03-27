@@ -38,7 +38,7 @@ def read_input(input_file):
 if __name__ == '__main__':
 
     abspath = os.path.dirname(os.path.abspath(__file__))
-    data_file = os.path.join(abspath, "reviews_data_reduced.txt.gz")
+    data_file = os.path.join(abspath, "reviews_data_further_reduced.txt.gz")
 
     # read the tokenized reviews into a list
     # each review item becomes a serries of words

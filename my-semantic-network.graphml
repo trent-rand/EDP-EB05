@@ -1,0 +1,661 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key attr.name="weight" attr.type="double" for="edge" id="d0" />
+  <graph edgedefault="undirected">
+    <node id="casa" />
+    <node id="mia" />
+    <node id="congee" />
+    <node id="omelets" />
+    <node id="tian" />
+    <node id="anmen" />
+    <node id="dong" />
+    <node id="fang" />
+    <node id="trans" />
+    <node id="siberian" />
+    <node id="toasts" />
+    <node id="cereals" />
+    <node id="west" />
+    <node id="lake" />
+    <node id="la" />
+    <node id="shangri" />
+    <node id="tvs" />
+    <node id="closet" />
+    <node id="tossing" />
+    <node id="comb" />
+    <node id="que" />
+    <node id="ubicacion" />
+    <node id="muy" />
+    <node id="louis" />
+    <node id="vuitton" />
+    <node id="wet" />
+    <node id="floors" />
+    <node id="scattered" />
+    <node id="trees" />
+    <node id="vice" />
+    <node id="versa" />
+    <node id="pizza" />
+    <node id="hut" />
+    <node id="stuff" />
+    <node id="kettles" />
+    <node id="houhai" />
+    <node id="quan" />
+    <node id="jude" />
+    <node id="rice" />
+    <node id="bagels" />
+    <node id="bread" />
+    <node id="wangfujing" />
+    <node id="power" />
+    <node id="plug" />
+    <node id="steel" />
+    <node id="complete" />
+    <node id="national" />
+    <node id="white" />
+    <node id="stainless" />
+    <node id="confusion" />
+    <node id="approached" />
+    <node id="steam" />
+    <node id="shampoo" />
+    <node id="cable" />
+    <node id="combined" />
+    <node id="milk" />
+    <node id="create" />
+    <node id="greatly" />
+    <node id="instruments" />
+    <node id="note" />
+    <node id="gu" />
+    <node id="curtains" />
+    <node id="fittings" />
+    <node id="dumplings" />
+    <node id="park" />
+    <node id="tiantan" />
+    <node id="manager" />
+    <node id="sales" />
+    <node id="screen" />
+    <node id="flat" />
+    <node id="ming" />
+    <node id="tombs" />
+    <node id="opera" />
+    <node id="miles" />
+    <node id="www" />
+    <node id="lag" />
+    <node id="machines" />
+    <node id="oh" />
+    <node id="sized" />
+    <node id="semi" />
+    <node id="sauce" />
+    <node id="chandeliers" />
+    <node id="accents" />
+    <node id="pouring" />
+    <node id="entered" />
+    <node id="cnn" />
+    <node id="bbc" />
+    <node id="king" />
+    <node id="queen" />
+    <node id="seperate" />
+    <node id="chaos" />
+    <node id="peace" />
+    <node id="ample" />
+    <node id="tr" />
+    <node id="scrambled" />
+    <node id="horrible" />
+    <node id="timid" />
+    <node id="stocked" />
+    <node id="prefer" />
+    <node id="doesn" />
+    <node id="cream" />
+    <node id="luxuries" />
+    <node id="throughout" />
+    <node id="vegetable" />
+    <node id="gin" />
+    <node id="tonics" />
+    <node id="crisp" />
+    <node id="theme" />
+    <node id="gulou" />
+    <node id="interpreted" />
+    <node id="principles" />
+    <node id="hrs" />
+    <node id="tai" />
+    <node id="constantly" />
+    <node id="starting" />
+    <node id="apartments" />
+    <node id="quarters" />
+    <node id="bigger" />
+    <node id="zhide" />
+    <node id="beiheyan" />
+    <node id="attention" />
+    <node id="industry" />
+    <node id="verify" />
+    <node id="scowly" />
+    <node id="jam" />
+    <node id="butter" />
+    <node id="ashtrays" />
+    <node id="flower" />
+    <node id="countertops" />
+    <node id="cotton" />
+    <node id="juice" />
+    <node id="orange" />
+    <node id="crew" />
+    <node id="appearance" />
+    <node id="purpose" />
+    <node id="musty" />
+    <node id="rain" />
+    <node id="architects" />
+    <node id="constructed" />
+    <node id="wood" />
+    <node id="chong" />
+    <node id="wen" />
+    <node id="baths" />
+    <node id="vast" />
+    <node id="guards" />
+    <node id="electrical" />
+    <node id="beihai" />
+    <node id="hohai" />
+    <node id="roast" />
+    <node id="pudding" />
+    <node id="walking" />
+    <node id="distance" />
+    <node id="fi" />
+    <node id="zentral" />
+    <node id="minor" />
+    <node id="fried" />
+    <node id="omelette" />
+    <node id="almost" />
+    <node id="electricity" />
+    <node id="detail" />
+    <node id="rich" />
+    <node id="fashion" />
+    <node id="calls" />
+    <node id="checkout" />
+    <node id="toiletries" />
+    <node id="dryer" />
+    <node id="blocked" />
+    <node id="pipes" />
+    <node id="among" />
+    <node id="playing" />
+    <node id="mao" />
+    <node id="hospital" />
+    <node id="fish" />
+    <node id="wooden" />
+    <node id="dozen" />
+    <node id="stand" />
+    <node id="features" />
+    <node id="toothbrush" />
+    <node id="yet" />
+    <node id="touch" />
+    <node id="intersection" />
+    <node id="north" />
+    <node id="steamed" />
+    <node id="fridays" />
+    <node id="korean" />
+    <node id="closest" />
+    <node id="guo" />
+    <node id="broadband" />
+    <node id="couches" />
+    <node id="wi" />
+    <node id="weights" />
+    <node id="steaming" />
+    <node id="substantial" />
+    <node id="sausages" />
+    <node id="stores" />
+    <node id="kfc" />
+    <node id="built" />
+    <node id="previously" />
+    <node id="hong" />
+    <node id="simply" />
+    <node id="needless" />
+    <node id="classical" />
+    <node id="carved" />
+    <node id="francisco" />
+    <node id="shonky" />
+    <edge source="casa" target="mia">
+      <data key="d0">0.9979060292243958</data>
+    </edge>
+    <edge source="casa" target="omelette">
+      <data key="d0">0.9911981821060181</data>
+    </edge>
+    <edge source="congee" target="omelets">
+      <data key="d0">0.9970995783805847</data>
+    </edge>
+    <edge source="congee" target="rice">
+      <data key="d0">0.9924691319465637</data>
+    </edge>
+    <edge source="omelets" target="rice">
+      <data key="d0">0.9939660429954529</data>
+    </edge>
+    <edge source="omelets" target="bread">
+      <data key="d0">0.9930844306945801</data>
+    </edge>
+    <edge source="omelets" target="dumplings">
+      <data key="d0">0.9930112361907959</data>
+    </edge>
+    <edge source="omelets" target="toasts">
+      <data key="d0">0.9923328757286072</data>
+    </edge>
+    <edge source="omelets" target="bagels">
+      <data key="d0">0.9922145009040833</data>
+    </edge>
+    <edge source="tian" target="anmen">
+      <data key="d0">0.9970861673355103</data>
+    </edge>
+    <edge source="tian" target="wangfujing">
+      <data key="d0">0.9928165674209595</data>
+    </edge>
+    <edge source="anmen" target="wangfujing">
+      <data key="d0">0.9932396411895752</data>
+    </edge>
+    <edge source="dong" target="fang">
+      <data key="d0">0.9966623187065125</data>
+    </edge>
+    <edge source="trans" target="siberian">
+      <data key="d0">0.9966284036636353</data>
+    </edge>
+    <edge source="toasts" target="cereals">
+      <data key="d0">0.9965020418167114</data>
+    </edge>
+    <edge source="toasts" target="rice">
+      <data key="d0">0.9932182431221008</data>
+    </edge>
+    <edge source="toasts" target="scrambled">
+      <data key="d0">0.9923210740089417</data>
+    </edge>
+    <edge source="west" target="lake">
+      <data key="d0">0.9963204860687256</data>
+    </edge>
+    <edge source="west" target="gulou">
+      <data key="d0">0.9920682311058044</data>
+    </edge>
+    <edge source="west" target="wangfujing">
+      <data key="d0">0.9907958507537842</data>
+    </edge>
+    <edge source="lake" target="houhai">
+      <data key="d0">0.9941055774688721</data>
+    </edge>
+    <edge source="lake" target="wangfujing">
+      <data key="d0">0.9937483668327332</data>
+    </edge>
+    <edge source="la" target="shangri">
+      <data key="d0">0.9959062933921814</data>
+    </edge>
+    <edge source="tvs" target="closet">
+      <data key="d0">0.9951046109199524</data>
+    </edge>
+    <edge source="closet" target="wood">
+      <data key="d0">0.9911907315254211</data>
+    </edge>
+    <edge source="tossing" target="comb">
+      <data key="d0">0.9949604868888855</data>
+    </edge>
+    <edge source="tossing" target="kettles">
+      <data key="d0">0.991722047328949</data>
+    </edge>
+    <edge source="tossing" target="timid">
+      <data key="d0">0.9911806583404541</data>
+    </edge>
+    <edge source="tossing" target="appearance">
+      <data key="d0">0.9908760190010071</data>
+    </edge>
+    <edge source="tossing" target="national">
+      <data key="d0">0.9904131889343262</data>
+    </edge>
+    <edge source="comb" target="create">
+      <data key="d0">0.9932097792625427</data>
+    </edge>
+    <edge source="que" target="ubicacion">
+      <data key="d0">0.9949217438697815</data>
+    </edge>
+    <edge source="que" target="tr">
+      <data key="d0">0.9920060038566589</data>
+    </edge>
+    <edge source="que" target="muy">
+      <data key="d0">0.9911357164382935</data>
+    </edge>
+    <edge source="ubicacion" target="muy">
+      <data key="d0">0.9947298169136047</data>
+    </edge>
+    <edge source="ubicacion" target="tr">
+      <data key="d0">0.9924750328063965</data>
+    </edge>
+    <edge source="muy" target="tr">
+      <data key="d0">0.9911870956420898</data>
+    </edge>
+    <edge source="louis" target="vuitton">
+      <data key="d0">0.9947155714035034</data>
+    </edge>
+    <edge source="wet" target="floors">
+      <data key="d0">0.994461715221405</data>
+    </edge>
+    <edge source="wet" target="bigger">
+      <data key="d0">0.9919057488441467</data>
+    </edge>
+    <edge source="scattered" target="trees">
+      <data key="d0">0.9943944215774536</data>
+    </edge>
+    <edge source="scattered" target="steel">
+      <data key="d0">0.9936354160308838</data>
+    </edge>
+    <edge source="trees" target="steel">
+      <data key="d0">0.9916374683380127</data>
+    </edge>
+    <edge source="vice" target="versa">
+      <data key="d0">0.9942265748977661</data>
+    </edge>
+    <edge source="pizza" target="hut">
+      <data key="d0">0.9942166209220886</data>
+    </edge>
+    <edge source="stuff" target="kettles">
+      <data key="d0">0.9942054152488708</data>
+    </edge>
+    <edge source="houhai" target="wangfujing">
+      <data key="d0">0.9914175868034363</data>
+    </edge>
+    <edge source="quan" target="jude">
+      <data key="d0">0.9940314292907715</data>
+    </edge>
+    <edge source="rice" target="bread">
+      <data key="d0">0.9914064407348633</data>
+    </edge>
+    <edge source="rice" target="butter">
+      <data key="d0">0.9904270172119141</data>
+    </edge>
+    <edge source="bagels" target="bread">
+      <data key="d0">0.993892252445221</data>
+    </edge>
+    <edge source="bagels" target="dumplings">
+      <data key="d0">0.992976188659668</data>
+    </edge>
+    <edge source="bread" target="steamed">
+      <data key="d0">0.9908245205879211</data>
+    </edge>
+    <edge source="bread" target="dumplings">
+      <data key="d0">0.9906472563743591</data>
+    </edge>
+    <edge source="power" target="plug">
+      <data key="d0">0.9936903119087219</data>
+    </edge>
+    <edge source="complete" target="national">
+      <data key="d0">0.9935570955276489</data>
+    </edge>
+    <edge source="national" target="timid">
+      <data key="d0">0.9906208515167236</data>
+    </edge>
+    <edge source="white" target="stainless">
+      <data key="d0">0.9934523105621338</data>
+    </edge>
+    <edge source="white" target="theme">
+      <data key="d0">0.992123007774353</data>
+    </edge>
+    <edge source="white" target="curtains">
+      <data key="d0">0.9910876750946045</data>
+    </edge>
+    <edge source="stainless" target="milk">
+      <data key="d0">0.9933698177337646</data>
+    </edge>
+    <edge source="stainless" target="curtains">
+      <data key="d0">0.9915326237678528</data>
+    </edge>
+    <edge source="stainless" target="throughout">
+      <data key="d0">0.9905416965484619</data>
+    </edge>
+    <edge source="confusion" target="approached">
+      <data key="d0">0.9934355616569519</data>
+    </edge>
+    <edge source="confusion" target="interpreted">
+      <data key="d0">0.9904054999351501</data>
+    </edge>
+    <edge source="steam" target="shampoo">
+      <data key="d0">0.9933943152427673</data>
+    </edge>
+    <edge source="shampoo" target="stocked">
+      <data key="d0">0.9922673106193542</data>
+    </edge>
+    <edge source="cable" target="combined">
+      <data key="d0">0.9933799505233765</data>
+    </edge>
+    <edge source="greatly" target="instruments">
+      <data key="d0">0.9931545257568359</data>
+    </edge>
+    <edge source="note" target="gu">
+      <data key="d0">0.9931089282035828</data>
+    </edge>
+    <edge source="curtains" target="fittings">
+      <data key="d0">0.9930826425552368</data>
+    </edge>
+    <edge source="curtains" target="weights">
+      <data key="d0">0.9906771779060364</data>
+    </edge>
+    <edge source="fittings" target="ample">
+      <data key="d0">0.9925016760826111</data>
+    </edge>
+    <edge source="fittings" target="luxuries">
+      <data key="d0">0.9906908869743347</data>
+    </edge>
+    <edge source="park" target="tiantan">
+      <data key="d0">0.9928649067878723</data>
+    </edge>
+    <edge source="manager" target="sales">
+      <data key="d0">0.9928647875785828</data>
+    </edge>
+    <edge source="screen" target="flat">
+      <data key="d0">0.9928388595581055</data>
+    </edge>
+    <edge source="ming" target="tombs">
+      <data key="d0">0.9927861094474792</data>
+    </edge>
+    <edge source="opera" target="miles">
+      <data key="d0">0.9927393198013306</data>
+    </edge>
+    <edge source="opera" target="vast">
+      <data key="d0">0.9914624094963074</data>
+    </edge>
+    <edge source="www" target="lag">
+      <data key="d0">0.9926881194114685</data>
+    </edge>
+    <edge source="machines" target="oh">
+      <data key="d0">0.9926812052726746</data>
+    </edge>
+    <edge source="machines" target="stand">
+      <data key="d0">0.9909130930900574</data>
+    </edge>
+    <edge source="oh" target="accents">
+      <data key="d0">0.9926315546035767</data>
+    </edge>
+    <edge source="sized" target="semi">
+      <data key="d0">0.9926531910896301</data>
+    </edge>
+    <edge source="sized" target="seperate">
+      <data key="d0">0.9925345778465271</data>
+    </edge>
+    <edge source="sauce" target="chandeliers">
+      <data key="d0">0.9926387667655945</data>
+    </edge>
+    <edge source="pouring" target="entered">
+      <data key="d0">0.9926269054412842</data>
+    </edge>
+    <edge source="pouring" target="rain">
+      <data key="d0">0.9916574954986572</data>
+    </edge>
+    <edge source="cnn" target="bbc">
+      <data key="d0">0.9926117658615112</data>
+    </edge>
+    <edge source="king" target="queen">
+      <data key="d0">0.9925543665885925</data>
+    </edge>
+    <edge source="chaos" target="peace">
+      <data key="d0">0.9925087094306946</data>
+    </edge>
+    <edge source="scrambled" target="fried">
+      <data key="d0">0.9913089871406555</data>
+    </edge>
+    <edge source="horrible" target="timid">
+      <data key="d0">0.9922766089439392</data>
+    </edge>
+    <edge source="prefer" target="doesn">
+      <data key="d0">0.9922011494636536</data>
+    </edge>
+    <edge source="cream" target="luxuries">
+      <data key="d0">0.9922007918357849</data>
+    </edge>
+    <edge source="cream" target="crisp">
+      <data key="d0">0.9921495318412781</data>
+    </edge>
+    <edge source="cream" target="cotton">
+      <data key="d0">0.9912989735603333</data>
+    </edge>
+    <edge source="throughout" target="vegetable">
+      <data key="d0">0.9922000169754028</data>
+    </edge>
+    <edge source="gin" target="tonics">
+      <data key="d0">0.9921810030937195</data>
+    </edge>
+    <edge source="crisp" target="wood">
+      <data key="d0">0.9915827512741089</data>
+    </edge>
+    <edge source="interpreted" target="principles">
+      <data key="d0">0.9919944405555725</data>
+    </edge>
+    <edge source="hrs" target="tai">
+      <data key="d0">0.9919928312301636</data>
+    </edge>
+    <edge source="constantly" target="starting">
+      <data key="d0">0.9919567704200745</data>
+    </edge>
+    <edge source="apartments" target="quarters">
+      <data key="d0">0.9919313788414001</data>
+    </edge>
+    <edge source="zhide" target="beiheyan">
+      <data key="d0">0.9918884038925171</data>
+    </edge>
+    <edge source="attention" target="industry">
+      <data key="d0">0.9918491244316101</data>
+    </edge>
+    <edge source="attention" target="detail">
+      <data key="d0">0.9911452531814575</data>
+    </edge>
+    <edge source="verify" target="scowly">
+      <data key="d0">0.9918344616889954</data>
+    </edge>
+    <edge source="jam" target="butter">
+      <data key="d0">0.9918244481086731</data>
+    </edge>
+    <edge source="jam" target="fish">
+      <data key="d0">0.9909836053848267</data>
+    </edge>
+    <edge source="ashtrays" target="flower">
+      <data key="d0">0.9917625188827515</data>
+    </edge>
+    <edge source="ashtrays" target="minor">
+      <data key="d0">0.9913500547409058</data>
+    </edge>
+    <edge source="countertops" target="cotton">
+      <data key="d0">0.9917411804199219</data>
+    </edge>
+    <edge source="juice" target="orange">
+      <data key="d0">0.9917094111442566</data>
+    </edge>
+    <edge source="orange" target="built">
+      <data key="d0">0.9906024932861328</data>
+    </edge>
+    <edge source="crew" target="appearance">
+      <data key="d0">0.9917008280754089</data>
+    </edge>
+    <edge source="purpose" target="musty">
+      <data key="d0">0.9916709065437317</data>
+    </edge>
+    <edge source="architects" target="constructed">
+      <data key="d0">0.991600513458252</data>
+    </edge>
+    <edge source="wood" target="baths">
+      <data key="d0">0.9915221333503723</data>
+    </edge>
+    <edge source="chong" target="wen">
+      <data key="d0">0.991574764251709</data>
+    </edge>
+    <edge source="guards" target="electrical">
+      <data key="d0">0.9914590716362</data>
+    </edge>
+    <edge source="beihai" target="hohai">
+      <data key="d0">0.9914424419403076</data>
+    </edge>
+    <edge source="roast" target="pudding">
+      <data key="d0">0.9914385080337524</data>
+    </edge>
+    <edge source="walking" target="distance">
+      <data key="d0">0.9914175868034363</data>
+    </edge>
+    <edge source="fi" target="zentral">
+      <data key="d0">0.9914021492004395</data>
+    </edge>
+    <edge source="fi" target="wi">
+      <data key="d0">0.990688145160675</data>
+    </edge>
+    <edge source="fried" target="sausages">
+      <data key="d0">0.9906585216522217</data>
+    </edge>
+    <edge source="almost" target="electricity">
+      <data key="d0">0.9911671876907349</data>
+    </edge>
+    <edge source="rich" target="fashion">
+      <data key="d0">0.9911227822303772</data>
+    </edge>
+    <edge source="calls" target="checkout">
+      <data key="d0">0.9910546541213989</data>
+    </edge>
+    <edge source="toiletries" target="dryer">
+      <data key="d0">0.9910416007041931</data>
+    </edge>
+    <edge source="toiletries" target="broadband">
+      <data key="d0">0.9907466769218445</data>
+    </edge>
+    <edge source="blocked" target="pipes">
+      <data key="d0">0.9910258054733276</data>
+    </edge>
+    <edge source="among" target="playing">
+      <data key="d0">0.9909994006156921</data>
+    </edge>
+    <edge source="mao" target="hospital">
+      <data key="d0">0.9909881353378296</data>
+    </edge>
+    <edge source="mao" target="north">
+      <data key="d0">0.9905685782432556</data>
+    </edge>
+    <edge source="wooden" target="dozen">
+      <data key="d0">0.9909269213676453</data>
+    </edge>
+    <edge source="features" target="toothbrush">
+      <data key="d0">0.9909077286720276</data>
+    </edge>
+    <edge source="yet" target="touch">
+      <data key="d0">0.990874171257019</data>
+    </edge>
+    <edge source="intersection" target="north">
+      <data key="d0">0.990864098072052</data>
+    </edge>
+    <edge source="fridays" target="korean">
+      <data key="d0">0.9908074140548706</data>
+    </edge>
+    <edge source="closest" target="guo">
+      <data key="d0">0.9907599091529846</data>
+    </edge>
+    <edge source="broadband" target="couches">
+      <data key="d0">0.9907464981079102</data>
+    </edge>
+    <edge source="steaming" target="substantial">
+      <data key="d0">0.9906736612319946</data>
+    </edge>
+    <edge source="stores" target="kfc">
+      <data key="d0">0.9906558990478516</data>
+    </edge>
+    <edge source="previously" target="hong">
+      <data key="d0">0.9905996918678284</data>
+    </edge>
+    <edge source="simply" target="needless">
+      <data key="d0">0.9905723333358765</data>
+    </edge>
+    <edge source="classical" target="carved">
+      <data key="d0">0.9905216097831726</data>
+    </edge>
+    <edge source="francisco" target="shonky">
+      <data key="d0">0.9904066920280457</data>
+    </edge>
+  </graph>
+</graphml>
